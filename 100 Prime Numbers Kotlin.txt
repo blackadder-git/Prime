@@ -1,0 +1,46 @@
+/**
+ * You can edit, run, and share this code.
+ * play.kotlinlang.org
+ */
+fun main() {
+    println("Hello, world!!!")
+    
+    val primes = find100Primes()
+    println(primes)
+}
+
+fun find100Primes(): List<Int> {
+    
+    // create a list to hold prime numbers
+    var primeNumbers = mutableListOf<Int>()
+    // start with 2 since 1 cannot be prime
+    var number = 2
+    
+    // continue to loop until there 100 numbers in the list
+    while(primeNumbers.size < 100) {
+        var isPrime = true
+        
+        // for the range 2 - half the number
+        for(count in 2..number/2) {
+			// number is not prime unless there is a remainder
+            if(number%count == 0) {
+    	        isPrime = false // only prime if divisible by 1 and itself
+        	    break
+        	}
+    	}
+        
+        // if prime, add number to list
+        if(isPrime == true) {
+            primeNumbers.add(number)
+        }
+
+        // println("size = ${primeNumbers.size}")
+        
+        // increment number
+		number++
+        // println("number = ${number}")
+    }
+    
+    // println(primeNumbers)
+    return primeNumbers
+}

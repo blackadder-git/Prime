@@ -1,0 +1,54 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+// https://www.programiz.com/csharp-programming/online-compiler/
+
+using System;
+using System.Collections;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Hello Mono World");
+        
+        var primes = find100Primes();
+        
+        // display list of primes
+        for(int i=0; i<primes.Count; i++) {
+            Console.WriteLine(primes[i]);
+        }
+    }
+    
+    
+    public static ArrayList find100Primes() {
+        
+        // create a list to hold prime numbers
+        var primeNumbers = new ArrayList();
+        // start with 2 since 1 cannot be prime
+        var number = 2;
+        
+        // continue to loop until there are 100 numbers in list
+        while(primeNumbers.Count < 100) {
+            var isPrime = true;
+            
+            // for the range 2 - half the number
+            for(int count = 2; count < number/2; count++) {
+                // number is not prime unless there is a remainder
+                if(number%count == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            
+            // if prime, add number to list
+            if(isPrime == true) {
+                primeNumbers.Add(number);
+            }
+            
+            // increment number
+            number++;
+        }
+
+        return primeNumbers;
+    }
+}
