@@ -1,0 +1,28 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+console.log("Welcome to Programiz!");
+
+// get input
+let input = "This is a line of input"
+
+// tokenize the input 
+let words = input.split(" ")
+
+// reverse array
+words.reverse()
+
+// loop and output
+let wordsReversed = ""
+for(let i=0; i < words.length; i++) {
+    // console.log(words[i])
+    
+    wordsReversed += words[i]
+
+    // add whitespace between words, but not the end
+    if(i < words.length-1) {
+        wordsReversed += " ";    
+    }
+}
+
+console.log(wordsReversed)
